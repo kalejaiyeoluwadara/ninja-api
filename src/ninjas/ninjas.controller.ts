@@ -19,14 +19,14 @@ export class NinjasController {
         return this.ninjasService.getNinjaById(id);
     }
 
-    @Patch(':id')
-    updateNinja(@Param('id') id: number, @Body() updateNinjaDto: UpdateNinjaDto) {
-        return this.ninjasService.updateNinja(id, updateNinjaDto);
-    }
-
     @Post()
     createNinja(@Body() createNinjaDto: CreateNinjaDto) {
         return this.ninjasService.createNinja(createNinjaDto);
+    }
+
+    @Patch(':id')
+    updateNinja(@Param('id') id: number, @Body() updateNinjaDto: UpdateNinjaDto) {
+        return this.ninjasService.updateNinja(id, updateNinjaDto);
     }
 
     @Delete(':id')
